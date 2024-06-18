@@ -1,0 +1,42 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/person.js" defer></script>
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <link href="/css/person.css" rel="stylesheet" />
+    <title>Practice</title>
+</head>
+<body>
+    <form id="form" class="needs-validation" novalidate>
+        <h1 class="text-center mb-4">Buscador de personas</h1>
+        <div class="mb-3">
+            <label for="search-id" class="form-label">Cédula</label>
+            <input type="text" class="form-control" id="search-id" placeholder="01-1234-5678" pattern="\d{2}-\d{4}-\d{4}" maxlength="13" required>
+            <div class="invalid-feedback">Please enter a valid ID in the format 01-1234-5678.</div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <button id="search-button-linq" type="submit" class="btn btn-primary" value="0">Buscar con Linq</button>
+            <button id="search-button-sqlCommnad" type="submit" class="btn btn-secondary" value="1">Buscar con Sql Command</button>
+        </div>
+    </form>
+
+    <h2 class="text-center mt-5 text-light">Resultado</h2>
+    <div id="result-section">
+        <div id="result" class="d-none">
+            <p id="name">Nombre: </p>
+            <p id="last-name">Primer apellido: </p>
+            <p id="last-name-second">Segundo apellido: </p>
+            <p id="birthday">Fecha de nacimiento: </p>
+        </div>
+        <div id="result-error" class="d-none">
+            <p>Persona no encontrada</p>
+        </div>
+    </div>
+
+
+</body>
+</html>
